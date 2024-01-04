@@ -3,12 +3,12 @@ import './App.css'
 import Navbar from './Components/Navbar/Navbar'
 
 function App() {
-
+const pass = 'Gisan babu'
   return (
     <>
 
-      <Navbar />
-      <Outlet />
+      <Navbar pass={pass}/>
+      <Outlet pass={pass} />
     </>
   )
 }

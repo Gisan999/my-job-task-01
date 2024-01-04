@@ -9,11 +9,9 @@ import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 
-const Navbar = ({theme}) => {
-    const { user, logOut } = useContext(AuthContext);
+const Navbar = ({ theme }) => {
+    const { user, logOut, setSearch } = useContext(AuthContext);
     const navigate = useNavigate();
-
-
     const handleLogOut = () => {
         logOut()
             .then(data => {
@@ -110,7 +108,11 @@ const Navbar = ({theme}) => {
                         {/* <div className="tooltip  tooltip-bottom" data-tip="Theme switch">
                   <input onClick={handle} type="checkbox" className="toggle"  />
                   </div> */}
-
+                        <div>
+                            <form >
+                                <input onChange={(e) => setSearch(e.target.value)} className="text-white italic text-lg p-5 pr-12 py-1 rounded-full bg-gray-700" type="text" placeholder="Search Product By Name" />
+                            </form>
+                        </div>
                         {/* <a className="btn">Button</a> */}
                         <div className="dropdown  dropdown-end">
                             <label tabIndex={1} className="btn btn-ghost btn-circle avatar">
